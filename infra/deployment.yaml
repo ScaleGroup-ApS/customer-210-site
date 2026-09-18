@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
         - name: customer-site
-          image: registry.scaleweb.dk/{{NAMESPACE}}-site:latest
+          image: registry.scaleweb.dk/{{CUSTOMER_SITE_IMAGE}}:latest
           imagePullPolicy: Always
           ports:
             - name: http
@@ -43,7 +43,7 @@ spec:
             - name: CONTACT_SPAM_PROVIDER
               value: "altcha"
             - name: ALTCHA_SITE_KEY
-              value: "{{CUSTOMER_SLUG}}-site"
+              value: "{{CUSTOMER_SITE_IMAGE}}"
             - name: ALTCHA_PUBLIC_BASE_URL
               value: "https://altcha.scaledev.dk"
             - name: ALTCHA_VERIFY_BASE_URL
@@ -94,9 +94,9 @@ spec:
             - name: CRM_CUSTOMER_SLUG
               value: "{{CUSTOMER_SLUG}}"
             - name: MAIL_FROM
-              value: "noreply@{{CUSTOMER_DOMAIN}}"
+              value: "noreply@ee-ejendomme.dk"
             - name: MAIL_TO
-              value: "{{CUSTOMER_EMAIL}}"
+              value: "kontakt@ee-ejendomme.dk"
 
           livenessProbe:
             httpGet:
