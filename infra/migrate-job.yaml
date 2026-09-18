@@ -19,7 +19,7 @@ spec:
       restartPolicy: Never
       containers:
         - name: migrate
-          image: registry.scaleweb.dk/{{NAMESPACE}}-site:{{SHORT_SHA}}
+          image: registry.scaleweb.dk/{{CUSTOMER_SITE_IMAGE}}:{{SHORT_SHA}}
           imagePullPolicy: Always
           command: ["npm", "run", "db:migrate"]
 
